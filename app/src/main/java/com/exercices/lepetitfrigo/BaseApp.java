@@ -25,7 +25,7 @@ public class BaseApp extends Application {
         return ProductRepository.getInstance();
     }
 
-    public CategorieRepository getCategorieRepository() {
+    /*public CategorieRepository getCategorieRepository() {
         return CategorieRepository.getInstance();
-    }
+    }*/
 }

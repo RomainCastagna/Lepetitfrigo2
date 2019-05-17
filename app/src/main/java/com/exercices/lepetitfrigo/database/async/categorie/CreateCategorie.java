@@ -3,11 +3,15 @@ package com.exercices.lepetitfrigo.database.async.categorie;
 import android.app.Application;
 import android.os.AsyncTask;
 
+import com.exercices.lepetitfrigo.BaseApp;
+import com.exercices.lepetitfrigo.database.entity.CategorieEntity;
+import com.exercices.lepetitfrigo.database.util.OnAsyncEventListener;
+
 import ch.hevs.aislab.demo.BaseApp;
 import ch.hevs.aislab.demo.database.entity.ClientEntity;
 import ch.hevs.aislab.demo.util.OnAsyncEventListener;
 
-public class CreateCategorie extends AsyncTask<ClientEntity, Void, Void> {
+public class CreateCategorie extends AsyncTask<CategorieEntity, Void, Void> {
 
     private Application application;
     private OnAsyncEventListener callback;
@@ -19,10 +23,10 @@ public class CreateCategorie extends AsyncTask<ClientEntity, Void, Void> {
     }
 
     @Override
-    protected Void doInBackground(ClientEntity... params) {
+    protected Void doInBackground(CategorieEntity... params) {
         try {
-            for (ClientEntity client : params)
-                ((BaseApp) application).getDatabase().clientDao()
+            for (CategorieEntity client : params)
+                ((BaseApp) application).getDatabase().cate()
                         .insert(client);
         } catch (Exception e) {
             exception = e;

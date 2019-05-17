@@ -6,12 +6,20 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 
+import com.exercices.lepetitfrigo.model.Categorie;
+import com.exercices.lepetitfrigo.model.Product;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
+        Product courgette = new Product("courgette",6,"courgette.jpg");
     }
 
     public void launchSubscription(View o){

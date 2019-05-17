@@ -20,5 +20,6 @@ Any use or reliance on any Content or materials posted via the Services or obtai
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_product_shop">ProductShopActivity</string>
+    <string name="title_activity_legume">LegumeActivity</string>
 
 </resources>

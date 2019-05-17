@@ -4,7 +4,7 @@
 
     <uses-feature
         android:name="android.hardware.Camera"
-        android:required="true"/>
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".QRScannerActivity"></activity>
+        <activity android:name=".LegumeActivity"></activity>
+        <activity android:name=".QRScannerActivity" />
         <activity
             android:name=".ProductShopActivity"
             android:label="@string/title_activity_product_shop"

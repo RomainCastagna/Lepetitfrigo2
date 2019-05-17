@@ -7,9 +7,7 @@ import com.exercices.lepetitfrigo.BaseApp;
 import com.exercices.lepetitfrigo.database.entity.CategorieEntity;
 import com.exercices.lepetitfrigo.database.util.OnAsyncEventListener;
 
-import ch.hevs.aislab.demo.BaseApp;
-import ch.hevs.aislab.demo.database.entity.ClientEntity;
-import ch.hevs.aislab.demo.util.OnAsyncEventListener;
+
 
 public class UpdateCategorie extends AsyncTask<CategorieEntity, Void, Void> {
 
@@ -26,8 +24,8 @@ public class UpdateCategorie extends AsyncTask<CategorieEntity, Void, Void> {
     protected Void doInBackground(CategorieEntity... params) {
         try {
             for (CategorieEntity categorie : params)
-                ((BaseApp) application).getDatabase().produitDao()
-                        .update(client);
+                ((BaseApp) application).getDatabase().categorieDao()
+                        .update(categorie);
         } catch (Exception e) {
             exception = e;
         }
