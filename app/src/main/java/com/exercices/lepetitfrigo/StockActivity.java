@@ -130,6 +130,7 @@ public class StockActivity extends AppCompatActivity {
             linearLayout1.addView(productName);
             linearLayout1.addView(productQty);
             linearLayout.addView(linearLayout1);
+            
         }
 
 
