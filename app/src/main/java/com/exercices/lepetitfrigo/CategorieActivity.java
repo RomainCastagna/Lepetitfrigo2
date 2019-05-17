@@ -6,6 +6,7 @@ import android.widget.GridView;
 import android.widget.ListView;
 
 import com.exercices.lepetitfrigo.adapter.ProductAdapter;
+import com.exercices.lepetitfrigo.adapter.ProductButtonAdapter;
 import com.exercices.lepetitfrigo.model.Product;
 
 import java.util.ArrayList;
@@ -17,8 +18,8 @@ public class CategorieActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_legume);
         ArrayList<Product>legmues = new ArrayList<Product>();
-        Product pommeroyal = new Product("pomme royla",5,"pommeroyal.jpg");
-        Product fraise = new Product("fraise",3,"fraise.jpg");
+        Product pommeroyal = new Product("pomme royla",5,R.drawable.pommeroyal);
+        Product fraise = new Product("fraise",3,R.drawable.fraise);
 
 
         // Construct the data source
@@ -26,7 +27,7 @@ public class CategorieActivity extends AppCompatActivity {
         arrayOfProducts.add(pommeroyal);
         arrayOfProducts.add(fraise);
 // Create the adapter to convert the array to views
-        ProductAdapter adapter = new ProductAdapter(this, arrayOfProducts);
+        ProductButtonAdapter adapter = new ProductButtonAdapter(this, arrayOfProducts);
 
     // Attach the adapter to a ListView
         GridView listView =  findViewById(R.id.gridlistproducts);

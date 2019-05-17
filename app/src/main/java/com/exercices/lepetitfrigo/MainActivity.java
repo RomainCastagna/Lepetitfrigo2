@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        Product courgette = new Product("courgette",6,"courgette.jpg");
+        Product courgette = new Product("courgette",6,R.drawable.courgette);
     }
 
     public void launchSubscription(View o){

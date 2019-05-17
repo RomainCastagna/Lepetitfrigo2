@@ -4,9 +4,9 @@ public class Product
 {
     private String name;
     private double price;
-    private String image;
+    private int image;
 
-    public Product(String name, double price, String image) {
+    public Product(String name, double price, int image) {
         this.name = name;
         this.price = price;
         this.image = image;
@@ -28,11 +28,11 @@ public class Product
         this.price = price;
     }
 
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(int image) {
         this.image = image;
     }
 }
