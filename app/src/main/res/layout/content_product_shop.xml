@@ -36,6 +36,7 @@
                 android:layout_weight="0.3"
                 android:background="@drawable/legumes"
                 android:gravity="bottom|center"
+                android:onClick="instantiateLegumes"
                 android:text="Légumes" />
 
             <Button
@@ -45,6 +46,7 @@
                 android:layout_weight="0.3"
                 android:background="@drawable/fruits"
                 android:gravity="bottom|center"
+                android:onClick="instantiateFruits"
                 android:text="Fruits" />
 
             <Button
@@ -54,6 +56,7 @@
                 android:layout_weight="0.3"
                 android:background="@drawable/epicerie"
                 android:gravity="bottom|center"
+                android:onClick="instantiateEpicerie"
                 android:text="Epicerie" />
         </LinearLayout>
 
@@ -69,6 +72,7 @@
                 android:layout_weight="0.3"
                 android:background="@drawable/pain"
                 android:gravity="bottom|center"
+                android:onClick="instantiatePain"
                 android:text="Pain" />
 
             <Button
@@ -78,6 +82,7 @@
                 android:layout_weight="0.3"
                 android:background="@drawable/produitslaitiers"
                 android:gravity="bottom|center"
+                android:onClick="instantiatePL"
                 android:text="Produits Laitiers" />
 
             <Button
@@ -87,6 +92,7 @@
                 android:layout_weight="0.3"
                 android:background="@drawable/oeufs"
                 android:gravity="bottom|center"
+                android:onClick="instantiateOeufs"
                 android:text="Oeufs" />
         </LinearLayout>
 
