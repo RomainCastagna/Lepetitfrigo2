@@ -6,6 +6,7 @@ public class Product
     private double price;
     private int image;
 
+
     public Product(String name, double price, int image) {
         this.name = name;
         this.price = price;

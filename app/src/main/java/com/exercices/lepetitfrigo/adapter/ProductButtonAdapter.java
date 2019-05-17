@@ -1,6 +1,7 @@
 package com.exercices.lepetitfrigo.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +10,10 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import com.exercices.lepetitfrigo.CategorieActivity;
+import com.exercices.lepetitfrigo.ProductShopActivity;
 import com.exercices.lepetitfrigo.R;
+import com.exercices.lepetitfrigo.model.Panier;
 import com.exercices.lepetitfrigo.model.Product;
 
 import java.util.ArrayList;
@@ -51,8 +55,9 @@ public class ProductButtonAdapter extends BaseAdapter {
             if (convertView == null) {
                 // if it's not recycled, initialize some attributes
                 btn = new Button(mContext);
-                btn.setLayoutParams(new GridView.LayoutParams(100, 55));
-                btn.setPadding(8, 8, 8, 8);
+                btn.setLayoutParams(new GridView.LayoutParams(200, 200));
+                btn.setPadding(10, 10, 10, 10);
+               // convertView = LayoutInflater.from(mContext).inflate(R.layout.item_products, parent, false);
             }
             else {
                 btn = (Button) convertView;
@@ -63,6 +68,10 @@ public class ProductButtonAdapter extends BaseAdapter {
            // btn.setTextColor(Color.WHITE);
             btn.setBackgroundResource(products.get(position).getImage());
             btn.setId(position);
+
+            btn.setOnClickListener(view -> {
+                    Panier.products.add(products.get(position));
+            });
             return btn;
         }
     }
