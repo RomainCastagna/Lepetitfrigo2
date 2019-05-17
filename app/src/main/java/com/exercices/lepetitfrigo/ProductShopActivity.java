@@ -14,8 +14,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.exercices.lepetitfrigo.model.Product;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class ProductShopActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private List<Product> legumes = new ArrayList<>();
+    private List<Product> fruits = new ArrayList<>();
+    private List<Product> epicerie = new ArrayList<>();
+    private List<Product> pain = new ArrayList<>();
+    private List<Product> produitslaitiers = new ArrayList<>();
+    private List<Product> oeufs = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +45,8 @@ public class ProductShopActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
     @Override
@@ -43,6 +57,74 @@ public class ProductShopActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
+    }
+
+    public void instantiateLegumes(View o){
+        legumes.add(new Product("COURGE butternut",2,"courge.jpg"));
+        legumes.add(new Product("ASPERGES VERTES",2,"courge.jpg"));
+        legumes.add(new Product("ASPERGES VERTES Mini",2,"courge.jpg"));
+        legumes.add(new Product("COTE DE BETTE",2,"courge.jpg"));
+        legumes.add(new Product("BETTERAVES CHIOGGIA",2,"courge.jpg"));
+        legumes.add(new Product("CONCOMBRES",2.20,"courge.jpg"));
+        legumes.add(new Product("POIVRON",5,"courge.jpg"));
+        legumes.add(new Product("AUBERGINES",2,"courge.jpg"));
+        legumes.add(new Product("COURGETTES",3,"courge.jpg"));
+        legumes.add(new Product("TOMATES Grandes (500g)",3.5,"courge.jpg"));
+        legumes.add(new Product("TOMATES Grandes",3,"courge.jpg"));
+        legumes.add(new Product("TOMATES Mélange petites (300g)",3.5,"courge.jpg"));
+        legumes.add(new Product("TOMATES Mélange petites (500g)",5.5,"courge.jpg"));
+        legumes.add(new Product("CAROTTES",2,"courge.jpg"));
+        legumes.add(new Product("OIGNONS frais en botte",2.5,"courge.jpg"));
+        legumes.add(new Product("ECHALOTES",2,"courge.jpg"));
+
+
+    }
+
+    public void instantiateFruits(View o){
+        fruits.add(new Product("FRAISES",2,"courge.jpg"));
+        fruits.add(new Product("FRAMBOISES",2,"courge.jpg"));
+        fruits.add(new Product("POMMES Royal",2,"courge.jpg"));
+        fruits.add(new Product("POMMES Boskoop",2,"courge.jpg"));
+        fruits.add(new Product("POIRES Conférences",2,"courge.jpg"));
+        fruits.add(new Product("POIRES HARROW sweet",2,"courge.jpg"));
+    }
+
+    public void instantiateEpicerie(View o){
+        epicerie.add(new Product("CONFITURES Maison - ORANGES douces bio",2,"courge.jpg"));
+        epicerie.add(new Product("CONFITURES Maison - FRAISES-COINGS",2,"courge.jpg"));
+        epicerie.add(new Product("CONFITURES Maison - FRAISES",2,"courge.jpg"));
+        epicerie.add(new Product("CONFITURES Maison - Framboises",2,"courge.jpg"));
+        epicerie.add(new Product("CONFITURES Maison - Framboises-pruneaux",2,"courge.jpg"));
+        epicerie.add(new Product("GELEES Maison - Fraises-Coings",2,"courge.jpg"));
+        epicerie.add(new Product("GELEES Maison - Coings",2,"courge.jpg"));
+        epicerie.add(new Product("CONCENTRE DE TOMATES Maison",2,"courge.jpg"));
+        epicerie.add(new Product("CHUTNEY OIGNONS Maison",2,"courge.jpg"));
+        epicerie.add(new Product("SIRPOS FRAISE Maison",2,"courge.jpg"));
+        epicerie.add(new Product("BOURGEONS d'origan",2,"courge.jpg"));
+        epicerie.add(new Product("FLEUR DE SEL - 5 herbettes, origan, nature",2,"courge.jpg"));
+        epicerie.add(new Product("HUILES D'OLIVE BIO",2,"courge.jpg"));
+        epicerie.add(new Product("FARINE DE SARRASIN",2,"courge.jpg"));
+    }
+
+    public void instantiatePain(View o){
+        pain.add(new Product("PAIN - Boulangerie de DENENS",3,"courge.jpg"));
+        pain.add(new Product("PAIN SANS GLUTEN",3,"courge.jpg"));
+    }
+
+    public void instantiatePL(View o){
+        produitslaitiers.add(new Product("FROMAGES DE CHEVRES, mi-dur",10,"courge.jpg"));
+        produitslaitiers.add(new Product("FROMAGES FRAIS Nature",4,"courge.jpg"));
+        produitslaitiers.add(new Product("FROMAGES FRAIS Poivre",4,"courge.jpg"));
+        produitslaitiers.add(new Product("FROMAGES FRAIS Herbe de Provence",4,"courge.jpg"));
+        produitslaitiers.add(new Product("LAITSPOIR",6,"courge.jpg"));
+        produitslaitiers.add(new Product("GRUYERE",5,"courge.jpg"));
+        produitslaitiers.add(new Product("TOMMES natures",5,"courge.jpg"));
+        produitslaitiers.add(new Product("PRODUITS de la fromagerie du Moléson",2,"courge.jpg"));
+    }
+
+    public void instantiateOeufs(View o){
+        oeufs.add(new Product("OEUFS FRAIS bio de Villars-sous-Yens x6",5,"courge.jpg"));
+        oeufs.add(new Product("OEUFS FRAIS gros SRPA de Pampigny x6",4.5,"courge.jpg"));
     }
 
     @Override
