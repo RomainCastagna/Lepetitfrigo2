@@ -13,10 +13,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class ProductShopActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+Button legumBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,12 @@ public class ProductShopActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        legumBtn=findViewById(R.id.legumes_btn);
+        legumBtn.setOnClickListener(view -> {
+                    Intent intent = new Intent(ProductShopActivity.this, CategorieActivity.class);
+                    startActivity(intent);
+                }
+        );
     }
 
     @Override

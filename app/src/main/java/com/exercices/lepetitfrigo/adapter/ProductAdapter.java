@@ -1,6 +1,7 @@
 package com.exercices.lepetitfrigo.adapter;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import com.exercices.lepetitfrigo.R;
 import com.exercices.lepetitfrigo.model.Product;
 import com.exercices.lepetitfrigo.model.User;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 public class ProductAdapter extends ArrayAdapter<Product> {
@@ -34,9 +36,20 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         // Populate the data into the template view using the data object
         productname.setText(product.getName());
         productprice.setText(String.valueOf(product.getPrice()));
-        productb.setBackground("@draw");
+        //Drawable d = getContext().getResources().getDrawable(getResId(product.getImage(),R.drawable.class));
+        productb.setBackgroundResource(R.drawable.fraise);
 
         // Return the completed view to render on screen
         return convertView;
+    }
+    public static int getResId(String resName, Class<?> c) {
+
+        try {
+            Field idField = c.getDeclaredField(resName);
+            return idField.getInt(idField);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
     }
 }
