@@ -23,13 +23,22 @@ import java.util.List;
 public class ProductShopActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private List<Product> legumes = new ArrayList<>();
-    private List<Product> fruits = new ArrayList<>();
-    private List<Product> epicerie = new ArrayList<>();
-    private List<Product> pain = new ArrayList<>();
-    private List<Product> produitslaitiers = new ArrayList<>();
-    private List<Product> oeufs = new ArrayList<>();
+    public static List<Product> legumes = new ArrayList<>();
+    public static List<Product> fruits = new ArrayList<>();
+    public static List<Product> epicerie = new ArrayList<>();
+    public static List<Product> pain = new ArrayList<>();
+    public static List<Product> produitslaitiers = new ArrayList<>();
+    public static List<Product> oeufs = new ArrayList<>();
+
+    public static int[] legumesQuantity = {12,3,4,5,6,12,23,12,12,3,4,5,6,12,23,12};
+    public static int[] fruitsQuantity = {12,3,4,5,6,12};
+    public static int[] epicerieQuantity = {12,3,4,5,6,12,23,12,12,3,4,5,6,12};
+    public static int[] painQuantity = {12,3};
+    public static int[] produitsLaitiersQuantity = {12,3,4,5,6,12,23,12};
+    public static int[] oeufsQuantity = {12,3};
+
     Button cButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +46,7 @@ public class ProductShopActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        instantiateAll();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -65,7 +75,7 @@ public class ProductShopActivity extends AppCompatActivity
         }
     }
 
-    public void instantiateLegumes(View o){
+    private void instantiateAll(){
         legumes.add(new Product("COURGE butternut",2,R.drawable.courgette));
         legumes.add(new Product("ASPERGES VERTES",2,R.drawable.courgette));
         legumes.add(new Product("ASPERGES VERTES Mini",2,R.drawable.courgette));
@@ -83,19 +93,13 @@ public class ProductShopActivity extends AppCompatActivity
         legumes.add(new Product("OIGNONS frais en botte",2.5,R.drawable.courgette));
         legumes.add(new Product("ECHALOTES",2,R.drawable.courgette));
 
-
-    }
-
-    public void instantiateFruits(View o){
         fruits.add(new Product("FRAISES",2,R.drawable.courgette));
         fruits.add(new Product("FRAMBOISES",2,R.drawable.courgette));
         fruits.add(new Product("POMMES Royal",2,R.drawable.courgette));
         fruits.add(new Product("POMMES Boskoop",2,R.drawable.courgette));
         fruits.add(new Product("POIRES Conférences",2,R.drawable.courgette));
         fruits.add(new Product("POIRES HARROW sweet",2,R.drawable.courgette));
-    }
 
-    public void instantiateEpicerie(View o){
         epicerie.add(new Product("CONFITURES Maison - ORANGES douces bio",2,R.drawable.courgette));
         epicerie.add(new Product("CONFITURES Maison - FRAISES-COINGS",2,R.drawable.courgette));
         epicerie.add(new Product("CONFITURES Maison - FRAISES",2,R.drawable.courgette));
@@ -110,14 +114,10 @@ public class ProductShopActivity extends AppCompatActivity
         epicerie.add(new Product("FLEUR DE SEL - 5 herbettes, origan, nature",2,R.drawable.courgette));
         epicerie.add(new Product("HUILES D'OLIVE BIO",2,R.drawable.courgette));
         epicerie.add(new Product("FARINE DE SARRASIN",2,R.drawable.courgette));
-    }
 
-    public void instantiatePain(View o){
         pain.add(new Product("PAIN - Boulangerie de DENENS",3,R.drawable.courgette));
         pain.add(new Product("PAIN SANS GLUTEN",3,R.drawable.courgette));
-    }
 
-    public void instantiatePL(View o){
         produitslaitiers.add(new Product("FROMAGES DE CHEVRES, mi-dur",10,R.drawable.courgette));
         produitslaitiers.add(new Product("FROMAGES FRAIS Nature",4,R.drawable.courgette));
         produitslaitiers.add(new Product("FROMAGES FRAIS Poivre",4,R.drawable.courgette));
@@ -126,11 +126,35 @@ public class ProductShopActivity extends AppCompatActivity
         produitslaitiers.add(new Product("GRUYERE",5,R.drawable.courgette));
         produitslaitiers.add(new Product("TOMMES natures",5,R.drawable.courgette));
         produitslaitiers.add(new Product("PRODUITS de la fromagerie du Moléson",2,R.drawable.courgette));
+
+        oeufs.add(new Product("OEUFS FRAIS bio de Villars-sous-Yens x6",5,R.drawable.courgette));
+        oeufs.add(new Product("OEUFS FRAIS gros SRPA de Pampigny x6",4.5,R.drawable.courgette));
+    }
+
+    public void instantiateLegumes(View o){
+
+
+
+    }
+
+    public void instantiateFruits(View o){
+
+    }
+
+    public void instantiateEpicerie(View o){
+
+    }
+
+    public void instantiatePain(View o){
+
+    }
+
+    public void instantiatePL(View o){
+
     }
 
     public void instantiateOeufs(View o){
-        oeufs.add(new Product("OEUFS FRAIS bio de Villars-sous-Yens x6",5,R.drawable.courgette));
-        oeufs.add(new Product("OEUFS FRAIS gros SRPA de Pampigny x6",4.5,R.drawable.courgette));
+
     }
 
     @Override
@@ -167,7 +191,8 @@ public class ProductShopActivity extends AppCompatActivity
             Intent intent = new Intent(getApplicationContext(), QRScannerActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_stock) {
-
+            Intent intent = new Intent(getApplicationContext(), StockActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_parametres) {
 
         } else if (id == R.id.nav_profile) {
