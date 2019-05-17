@@ -169,5 +169,19 @@
                 android:layout_weight="0.3"
                 android:text="Prix" />
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout_Achats"
+            android:layout_width="match_parent"
+            android:layout_height="550dp"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Acheter" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
